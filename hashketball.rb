@@ -223,7 +223,7 @@ def big_shoe_rebounds
   # b.map { |facts, stats| [:shoe] }
      shoes << player_helper[a][:shoe]
      if player_helper[a][:shoe] == shoes.sort.max
-      rebounds = "hurray"
+      rebounds = player_helper[a][:rebounds]
      end
 # binding.pry
 end
