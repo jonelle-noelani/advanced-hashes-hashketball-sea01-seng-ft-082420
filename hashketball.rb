@@ -207,11 +207,10 @@ def player_numbers(team_name)
   jersey = [ ]
   game_hash.each do |location, attributes|
     if team_name == attributes[:team_name]
-      binding.pry
       attributes.each do |key, value|
     if key == :players
-      binding.pry 
       value.each do |num|
+        binding.pry
         jersey << num
         binding.each
   # find = team_helper
