@@ -227,6 +227,7 @@ def big_shoe_rebounds
      end
 # binding.pry
 end
+rebounds
 end
   
   # team_helper(team_name).value? find_all{[:numbers]}
