@@ -221,9 +221,11 @@ def big_shoe_rebounds
   player_helper.each do | a, b |
   # b.map { |facts, stats| [:shoe] }
      shoes << player_helper[a][:shoe]
+     if player_helper[a][:shoe] == shoes.sort.max
+       puts "Hurray"
+     end
 # binding.pry
 end
-shoes.sort
 end
   
   # team_helper(team_name).value? find_all{[:numbers]}
