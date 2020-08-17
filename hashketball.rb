@@ -218,7 +218,7 @@ end
 
 def big_shoe_rebounds
   shoes = [ ]
-  rebounds = "something"
+  rebounds = "Hurray!"
   player_helper.each do | a, b |
   # b.map { |facts, stats| [:shoe] }
      shoes << player_helper[a][:shoe]
