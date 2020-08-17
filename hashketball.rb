@@ -205,9 +205,10 @@ end
 
 def player_numbers(team_name)
   jersey = [ ]
-  find = team_helper
-  find[team_name].each do |name, stats|
-  jersey << find[team_name][name][:number]
+  
+  # find = team_helper
+  # find[team_name].each do |name, stats|
+  # jersey << find[team_name][name][:number]
   end
   jersey
 end
