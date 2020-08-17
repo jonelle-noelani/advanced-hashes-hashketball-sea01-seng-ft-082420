@@ -1,4 +1,4 @@
-# Write your code below game_hash
+require "pry"
 def game_hash
   {
     home: {
@@ -126,4 +126,113 @@ def game_hash
   }
 end
 
-# Write code here
+def player_helper
+  h1 = game_hash[:home][:players]
+  h2 = game_hash[:away][:players]
+  whole_array = (h1 + h2)
+  player_hash = { }
+  whole_array.each_with_index do |player_set, index|
+    name_as_key = player_set[:player_name]
+    player_hash[name_as_key] = player_set
+end
+player_hash
+end
+
+def team_helper(team_name)
+game_hash.each_with_object( { } ) do | (location, team) , new_game_hash |
+team.each do   | attributes, value |
+game_hash[location][:players].each do |player|
+
+if !new_game_hash[location]
+new_game_hash[location] = { }
+end
+if !new_game_hash[location][team_name]
+new_game_hash[location][team_name] [:players] = { }
+end
+end
+end
+end
+end
+
+
+
+# def team_helper
+#   player_hash = { }
+#   team_hash = { }
+#   game_hash.each do |location, attributes|
+#     attributes.each do |key, value|
+#       # if game_hash
+#       game_hash[location][:players].each_with_index do |player_set, index|
+#         team_key = game_hash[location][key]
+#         name_as_key = player_set[:player_name]
+#         player_hash[name_as_key] = player_set
+#         # binding.pry
+#         team_hash[team_key] = player_hash
+#       end
+#     end
+#   end
+#   team_hash
+# end
+# binding.pry
+        
+
+def num_points_scored(player_name)
+  player_helper[player_name][:points]
+end
+
+def shoe_size(player_name)
+  player_helper[player_name][:shoe]
+end
+
+def team_colors(team_name)
+rainbow = "nope" 
+game_hash.each do |location, attributes|
+  attributes.each do |key, value|
+	if game_hash[location][key] == team_name
+		 rainbow = game_hash[location][:colors]
+		end
+end
+end
+rainbow
+end
+
+def team_names
+  new_array = [ ]
+new_array << game_hash[:home][:team_name]
+new_array << game_hash[:away][:team_name]
+new_array
+end
+
+def player_numbers(team_name)
+  jersey = [ ]
+  find = team_helper
+  find[team_name].each do |name, stats|
+  jersey << find[team_name][name][:number]
+  end
+  jersey
+end
+
+def player_stats(player_name)
+  player_helper[player_name]
+end
+
+def big_shoe_rebounds
+  shoes = [ ]
+  player_helper.each do | a, b |
+  # b.map { |facts, stats| [:shoe] }
+     shoes << player_helper[a][:shoe]
+# binding.pry
+end
+shoes.sort
+end
+  
+  # team_helper(team_name).value? find_all{[:numbers]}
+  # game_hash.each do |location, attributes|
+  #   attributes.each do |key, value|
+  #     binding.pry 
+  #     if game_hash[location][key] == team_name
+  #       game_hash[location][:players][:number].find_all
+  #     end
+  #   end
+  # end
+# end
