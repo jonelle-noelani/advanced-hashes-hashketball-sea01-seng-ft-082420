@@ -213,6 +213,7 @@ def player_numbers(team_name)
       binding.pry 
       value.each do |num|
         jersey << num
+        binding.each
   # find = team_helper
   # find[team_name].each do |name, stats|
   # jersey << find[team_name][name][:number]
