@@ -218,11 +218,12 @@ end
 
 def big_shoe_rebounds
   shoes = [ ]
+  rebounds = "something"
   player_helper.each do | a, b |
   # b.map { |facts, stats| [:shoe] }
      shoes << player_helper[a][:shoe]
      if player_helper[a][:shoe] == shoes.sort.max
-       puts "Hurray"
+      
      end
 # binding.pry
 end
